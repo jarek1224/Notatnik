@@ -27,7 +27,6 @@ public class Start extends JFrame implements ActionListener {
 	
 	File plik;
 	
-
 	Start() {
 		super("Notatnik");
 		menuBar = new JMenuBar();
@@ -39,18 +38,16 @@ public class Start extends JFrame implements ActionListener {
 				iOtworz = new JMenuItem("Otworz"); iOtworz.addActionListener(this);
 				iZapisz = new JMenuItem("Zapisz"); iZapisz.addActionListener(this);
 				iZapiszJako = new JMenuItem("Zapisz jako"); iZapiszJako.addActionListener(this);
-				iExit = new JMenuItem("Wyjúcie"); iExit.addActionListener(this);
+				iExit = new JMenuItem("Wyj≈õcie"); iExit.addActionListener(this);
 				
 				iAutor = new JMenuItem("Autor aplikacji"); iAutor.addActionListener(this);
-				
-			
+							
 			menuBar.add(mPlik); menuBar.add(mPomoc);
 			
 			mPlik.add(iNowy);mPlik.add(iOtworz);mPlik.add(iZapisz);mPlik.add(iZapiszJako);
 			mPlik.addSeparator();mPlik.add(iExit);
 			mPomoc.add(iAutor);
-			
-		
+					
 		notatnik = new JTextArea();
 		JScrollPane scrol = new JScrollPane(notatnik); 
 		notatnik.setFont(new Font("System", Font.PLAIN, 15));
@@ -109,15 +106,11 @@ public class Start extends JFrame implements ActionListener {
 		Object cel = e.getSource();
 		
 		if(cel==iExit) System.exit(0); else
-		if(cel==iAutor) JOptionPane.showMessageDialog(this, "Jaros≥aw Bubicz", "Autor", JOptionPane.INFORMATION_MESSAGE); else
+		if(cel==iAutor) JOptionPane.showMessageDialog(this, "Jaros≈Çaw Bubicz", "Autor", JOptionPane.INFORMATION_MESSAGE); else
 		if(cel==iOtworz) otworz();else
 		if(cel==iNowy) {notatnik.setText("");this.setTitle("Nowy");plik=null;}else
 		if(cel==iZapiszJako) zapiszJako(); else
-		if(cel==iZapisz) {if(plik==null) zapiszJako(); else zapisz();}
-		
-			
-		
-		
+		if(cel==iZapisz) {if(plik==null) zapiszJako(); else zapisz();}	
 	}
 
 }
